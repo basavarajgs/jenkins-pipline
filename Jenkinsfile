@@ -7,13 +7,13 @@ pipeline {
      }
    }
  
- tage ('TEST') {
+ stage ('TEST') {
      steps {
        echo "this is build stage"
      }
    }
 
-  tage ('DEPLOY') {
+  stage ('DEPLOY') {
      steps {
        echo "this is build stage"
      }
