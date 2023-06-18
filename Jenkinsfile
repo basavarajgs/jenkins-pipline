@@ -1,8 +1,7 @@
 pipeline {
- agent {
-   label 'jenkins'
- }
+ agent none
  stages {
+  agent any 
    stage ('BUILD') {
      steps {
        echo "this is build stage"
@@ -11,6 +10,7 @@ pipeline {
    }
  
  stage ('TEST') {
+  agent { label 'jenkins'}
      steps {
        echo "this is build stage" 
       sh 'sleep 5'
@@ -18,6 +18,7 @@ pipeline {
    }
 
   stage ('DEPLOY') {
+   agent { label 'jenkins'}
      steps {
        echo "this is build stage"   
       sh 'sleep 5'
