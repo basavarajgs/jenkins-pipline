@@ -2,7 +2,7 @@ pipeline {
  agent none
  stages { 
    stage ('BUILD') {
-    agent any
+    agent { label 'master'}
      steps {
        echo "this is build stage"
       sh 'sleep 5'
