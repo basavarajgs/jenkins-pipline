@@ -6,20 +6,17 @@ pipeline {
        echo "this is build stage"
      }
    }
-
-  stages {
-   stage ('TEST') {
-     steps {
-       echo "this is build stage"
-     }
-   }
  
-  stages {
-   stage ('DEPLOY') {
+ tage ('TEST') {
      steps {
        echo "this is build stage"
      }
    }
-  }
-   
+
+  tage ('DEPLOY') {
+     steps {
+       echo "this is build stage"
+     }
+   }
+ }
 }
