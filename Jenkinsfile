@@ -4,21 +4,18 @@ pipeline {
    stage ('BUILD') {
      steps {
        echo "this is build stage"
-      sh 'sleep 5'
      }
    }
  
  stage ('TEST') {
      steps {
-       echo "this is build stage"
-       sh 'sleep 5'
+       echo "this is build stage"    
      }
    }
 
   stage ('DEPLOY') {
      steps {
-       echo "this is build stage"
-       sh 'sleep 5'
+       echo "this is build stage"       
      }
    }
  }
