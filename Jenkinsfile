@@ -7,7 +7,6 @@ pipeline {
       sh 'sleep 5'
      }
    }
- }
  stage ('TEST PARELLEL') {
   parallel
   stage ('TEST ON CHROME'){
@@ -44,5 +43,5 @@ pipeline {
    }
  }
 }
- }
+}
 }
