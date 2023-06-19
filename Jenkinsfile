@@ -9,13 +9,13 @@ pipeline {
    }
  stage ('TEST PARELLEL') {
   parallel
-  stage ('TEST ON CHROME'){
+  stage ('TEST ON CHROME') {
    steps {
     echo "this is test on chrome browser"
       sh 'sleep 5; exit 1'
      }
    }
-  stages ('TEST ON SAFARI'){
+  stages ('TEST ON SAFARI') {
    steps {
     echo "this is test on safari browser"
       sh 'sleep 5; exit 1'
