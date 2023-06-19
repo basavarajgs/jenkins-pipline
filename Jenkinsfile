@@ -7,7 +7,7 @@ pipeline {
       sh 'sleep 5'
      }
    }
- 
+ }
  stage ('TEST PARELLEL') {
   parallel
   stage ('TEST ON CHROME'){
@@ -22,7 +22,6 @@ pipeline {
       sh 'sleep 5; exit 1'
      }
    }
-
   stage ('DEPLOY parallel') {
    parallel
    stage ('SERVER1') {
@@ -43,5 +42,7 @@ pipeline {
       sh 'sleep 5'
      }
    }
+ }
+}
  }
 }
