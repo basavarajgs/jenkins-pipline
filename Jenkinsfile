@@ -17,19 +17,20 @@ pipeline {
    }
   }
  }
-  stages ('TEST ON SAFARI') {
+  stage ('TEST ON SAFARI') {
    steps {
     echo "this is test on safari browser"
       sh 'sleep 5; exit 1'
      }
    }
-  stage ('DEPLOY parallel') {
-   parallel
+  stage ('DEPLOY PARALLEL') {
+   parallel {
    stage ('SERVER1') {
      steps {
        echo "this is deploy to server 1"   
       sh 'sleep 5'
      }
+   }
    }
     stage ('SERVER2') {
      steps {
