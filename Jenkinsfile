@@ -32,6 +32,7 @@ pipeline {
      }
    }
    }
+  }
     stage ('SERVER2') {
      steps {
        echo "this is deploy to server 2"   
@@ -44,6 +45,5 @@ pipeline {
       sh 'sleep 5'
      }
    }
- }
 }
 }
