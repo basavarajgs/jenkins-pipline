@@ -23,7 +23,7 @@ pipeline {
       sh 'sleep 5; exit 1'
      }
    }
-  stage ('DEPLOY PARALLEL') {
+  stage ('DEPLOY') {
    parallel {
    stage ('SERVER1') {
      steps {
