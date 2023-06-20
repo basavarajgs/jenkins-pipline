@@ -1,7 +1,8 @@
 pipeline {
- agent jenkins
+ agent none
  stages { 
    stage ('BUILD') {
+    agent { label 'jenkins'}
      steps {
        echo "this is build stage"
       sh 'sleep 5'
@@ -10,12 +11,14 @@ pipeline {
  stage ('TEST PARELLEL') {
   parallel {
   stage ('TEST ON CHROME') {
+   agent { label 'jenkins'}
    steps {
     echo "this is test on chrome browser"
       sh 'sleep 5; exit 1'
      }
    }
   stage ('TEST ON SAFARI') {
+   agent { label 'jenkins'}
    steps {
     echo "this is test on safari browser"
       sh 'sleep 5; exit 1'
@@ -24,6 +27,7 @@ pipeline {
   }
  }
   stage ('DEPLOY') {
+   agent { label 'jenkins'}
  steps {
   echo " this is deploy stage "
   sh sleep 5
