@@ -9,8 +9,6 @@ pipeline {
     }
     stage('TEST PARALLEL') {
       parallel {
-        stage('TEST') {
-          stages {
             stage('TEST ON CHROME') {
               steps {
                 echo "This is the test on chrome browser"
@@ -26,13 +24,14 @@ pipeline {
           }
         }
         stage('DEPLOY') {
-          stages {
+          parallel {
             stage('SERVER1') {
               steps {
                 echo "This is the deploy to server 1"
                 sh 'sleep 5'
               }
             }
+          }
             stage('SERVER2') {
               steps {
                 echo "This is the deploy to server 2"
@@ -46,8 +45,5 @@ pipeline {
               }
             }
           }
-        }
       }
     }
-  }
-}
