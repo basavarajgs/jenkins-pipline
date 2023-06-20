@@ -24,26 +24,10 @@ pipeline {
   }
  }
   stage ('DEPLOY') {
-   parallel {
-   stage ('SERVER1') {
-     steps {
-       echo "this is deploy to server 1"   
-      sh 'sleep 5'
-     }
-   }
-   }
-    stage ('SERVER2') {
-     steps {
-       echo "this is deploy to server 2"   
-      sh 'sleep 5'
-     }
-   }
-    stage ('SERVER3') {
-     steps {
-       echo "this is deploy to server 3"   
-      sh 'sleep 5'
-     }
-   }
+ steps {
+  echo " this is deploy stage "
+  sh sleep 5
  }
-}
+  }
+ }
 }
