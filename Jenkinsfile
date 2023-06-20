@@ -15,14 +15,14 @@ pipeline {
       sh 'sleep 5; exit 1'
      }
    }
-  }
- }
   stage ('TEST ON SAFARI') {
    steps {
     echo "this is test on safari browser"
       sh 'sleep 5; exit 1'
      }
    }
+  }
+ }
   stage ('DEPLOY') {
    parallel {
    stage ('SERVER1') {
