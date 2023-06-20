@@ -30,7 +30,7 @@ pipeline {
    agent { label 'jenkins'}
  steps {
   echo " this is deploy stage "
-  sh sleep 5
+  sh 'sleep 5'
  }
   }
  }
