@@ -7,7 +7,7 @@ pipeline {
         sh 'sleep 5'
       }
     }
-    stage('TEST AND DEPLOY') {
+    stage('TEST PARALLEL') {
       parallel {
         stage('TEST') {
           stages {
