@@ -14,14 +14,14 @@ pipeline {
    agent { label 'jenkins'}
    steps {
     echo "this is test on chrome browser"
-      sh 'sleep 5; exit 1'
+      sh 'sleep 5'
      }
    }
   stage ('TEST ON SAFARI') {
    agent { label 'jenkins'}
    steps {
     echo "this is test on safari browser"
-      sh 'sleep 5; exit 1'
+      sh 'sleep 5'
      }
    }
   }
