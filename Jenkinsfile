@@ -1,6 +1,17 @@
 pipeline {
  agent none
  stages { 
+  stage('Webhook') {
+            steps {
+                script {
+                    def payload = httpRequest authentication: 'webhook', url: 'http://13.233.252.129:8080/'
+                    // Process the payload and trigger subsequent pipeline steps as needed
+                }
+            }
+        }
+        // Add more stages as required
+    }
+}
    stage ('BUILD') {
     agent { label 'jenkins'}
      steps {
