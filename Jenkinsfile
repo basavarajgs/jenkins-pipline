@@ -10,8 +10,7 @@ pipeline {
             }
         }
         // Add more stages as required
-    }
-}
+    
    stage ('BUILD') {
     agent { label 'jenkins'}
      steps {
