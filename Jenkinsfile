@@ -28,18 +28,20 @@ pipeline {
  }
   stage ('DEPLOY') {
    parallel {
-    stage ('DEPLOY ON SERVER 1')
+    stage ('DEPLOY ON SERVER 1') {
    agent { label 'jenkins'}
  steps {
   echo " this is server1 deploy "
   sh 'sleep 5'
  }
   }
-      stage ('DEPLOY ON SERVER 2')
+      stage ('DEPLOY ON SERVER 2') {
    agent { label 'jenkins'}
  steps {
   echo " this is server2 deploy "
   sh 'sleep 5'
+ }
+}
  }
 }
  }
