@@ -1,7 +1,7 @@
 pipeline {
  agent none
  stages { 
-  stage('Webhook') {
+  stage ('Webhook') {
             steps {
                 script {
                     def payload = httpRequest authentication: 'webhook', url: 'http://3.110.214.224:8080/'
