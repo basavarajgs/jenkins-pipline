@@ -4,7 +4,7 @@ pipeline {
   stage('Webhook') {
             steps {
                 script {
-                    def payload = httpRequest authentication: 'webhook', url: ''
+                    def payload = httpRequest authentication: 'webhook', url: 'http://52.66.19.85:8080/'
                     // Process the payload and trigger subsequent pipeline steps as needed
                 }
             }
