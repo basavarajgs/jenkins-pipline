@@ -27,7 +27,7 @@ pipeline {
      }
    }
   stage ('TEST ON SAFARI') {
-   agent { label 'jenkins'}
+   agent { label 'master'}
    steps {
     echo "this is test on safari browser"
       sh 'sleep 5'
@@ -38,14 +38,14 @@ pipeline {
   stage ('DEPLOY') {
    parallel {
     stage ('DEPLOY ON SERVER 1') {
-   agent { label 'masters'}
+   agent { label 'master'}
  steps {
   echo " this is server1 deploy "
   sh 'sleep 5'
  }
   }
       stage ('DEPLOY ON SERVER 2') {
-   agent { label 'jenkins'}
+   agent { label 'master'}
  steps {
   echo " this is server2 deploy "
   sh 'sleep 5'
