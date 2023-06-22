@@ -4,7 +4,7 @@ pipeline {
   stage('Webhook') {
             steps {
                 script {
-                    def payload = httpRequest authentication: 'webhook', url: 'http://13.233.252.129:8080/'
+                    def payload = httpRequest authentication: 'webhook', url: 'https://github.com/basavarajgs/jenkins-pipline/edit/main/Jenkinsfile'
                     // Process the payload and trigger subsequent pipeline steps as needed
                 }
             }
