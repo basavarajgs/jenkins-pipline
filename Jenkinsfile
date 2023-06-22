@@ -2,7 +2,7 @@ pipeline {
  agent none
  stages { 
         stage ('Webhook') {
-         agent { label 'jenkins'}
+         agent { label 'master'}
             steps {
                 script {
                     def payload = httpRequest authentication: 'webhook', url: 'http://43.204.140.74:8080/job/pipeline/1/console'
@@ -11,7 +11,7 @@ pipeline {
             }
         }
    stage ('BUILD') {
-    agent { label 'jenkins'}
+    agent { label 'master'}
      steps {
        echo "this is build stage"
       sh 'sleep 5'
@@ -20,7 +20,7 @@ pipeline {
  stage ('TEST PARELLEL') {
   parallel {
   stage ('TEST ON CHROME') {
-   agent { label 'jenkins'}
+   agent { label 'master'}
    steps {
     echo "this is test on chrome browser"
       sh 'sleep 5'
@@ -38,7 +38,7 @@ pipeline {
   stage ('DEPLOY') {
    parallel {
     stage ('DEPLOY ON SERVER 1') {
-   agent { label 'jenkins'}
+   agent { label 'masters'}
  steps {
   echo " this is server1 deploy "
   sh 'sleep 5'
