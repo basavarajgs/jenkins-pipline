@@ -5,7 +5,7 @@ pipeline {
          agent { label 'jenkins'}
             steps {
                 script {
-                    def payload = httpRequest authentication: 'webhook', url: 'http://43.205.210.165:8080/job/jenkins%20pipeline/70/console'
+                    def payload = httpRequest authentication: 'webhook', url: 'http://43.204.140.74:8080/job/pipeline/1/console'
                     // Process the payload and trigger subsequent pipeline steps as needed
                 }
             }
