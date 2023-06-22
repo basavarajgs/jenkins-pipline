@@ -1,6 +1,15 @@
 pipeline {
  agent none
  stages { 
+  stages {
+        stage('Webhook') {
+            steps {
+                script {
+                    def payload = httpRequest authentication: 'webhook', url: 'http://43.205.210.165:8080/job/jenkins%20pipeline/70/console'
+                    // Process the payload and trigger subsequent pipeline steps as needed
+                }
+            }
+        }
    stage ('BUILD') {
     agent { label 'jenkins'}
      steps {
