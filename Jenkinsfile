@@ -1,7 +1,6 @@
 pipeline {
  agent none
  stages { 
-  stages {
         stage('Webhook') {
             steps {
                 script {
