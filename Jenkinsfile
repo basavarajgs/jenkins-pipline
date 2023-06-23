@@ -1,15 +1,6 @@
 pipeline {
  agent none
  stages { 
-        stage ('Webhook') {
-         agent { label 'master'}
-            steps {
-                script {
-                    def payload = httpRequest authentication: 'webhook', url: 'http://43.204.140.74:8080/job/pipeline/1/console'
-                    // Process the payload and trigger subsequent pipeline steps as needed
-                }
-            }
-        }
    stage ('BUILD') {
     agent { label 'master'}
      steps {
