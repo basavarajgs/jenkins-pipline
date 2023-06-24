@@ -6,5 +6,10 @@ pipeline {
    echo " this is build stage "
   }
  }
+stage ( 'TEST') {
+ steps {
+  echot " this is test stage"
+ }
 }
+ }
 }
