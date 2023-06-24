@@ -8,7 +8,7 @@ pipeline {
  }
 stage ( 'TEST') {
  steps {
-  echot " this is test stage"
+  echo " this is test stage"
  }
 }
  }
