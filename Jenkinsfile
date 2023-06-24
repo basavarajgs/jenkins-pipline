@@ -16,3 +16,5 @@ stage ( 'TEST') {
     echo " this is deploy stage "
  }
 }
+ }
+}
